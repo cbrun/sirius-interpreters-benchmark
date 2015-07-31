@@ -1,0 +1,30 @@
+h1. Projects for benchmarking interpreters overhead
+
+These projects are useful to compare the overhead of some query interpreters in Sirius.
+
+org.eclipse.sirius.tests.interpreterbench.design contains a Viewpoint specification for Ecore models containing several functional equivalent
+Diagram specifications except they leverage a specific interpreter.
+
+All the diagram specifications are synchronized, meaning one can easily create a new diagram on top of a EPackage and that should trigger the update and creation of a
+decent sized diagram. 
+
+*Queries are very straightforwards* because limited by the simplest query langage (feature:), these diagram descriptions are not relevant for comparing the overhead in case of complex queries but the same approach could be used.
+
+The 8K project is a modeling project with a model which has a decent size when measuring refresh times using yourkit in tracing mode.
+It requires an installation of EcoreTools 3.x as the model is an .ecorebin.
+
+If you are looking for a bigger project with 1Million model elements, here is one which leverages the .ecorebin files too:
+https://bugs.eclipse.org/bugs/attachment.cgi?id=254581
+
+
+h2. Getting started
+
+Download Obeo Designer CE, 8.0
+http://www.obeodesigner.com/download
+from the update site (http://www.obeo.fr/download/release/designer/8.0/community/latest/repository) install 
+"Sirius Support for Legacy Queries ".
+
+Import the @org.eclipse.sirius.tests.interpreterbench.design@ and @8K@ projects in your workspace.
+It should not have any dependency or compile error.
+
+Open the 8K project, you should have several diagrams each corresponding to a specification of the .odesign file which leverages one of the interpreters.
